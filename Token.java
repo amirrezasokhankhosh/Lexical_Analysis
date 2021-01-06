@@ -15,7 +15,7 @@ public class Token {
                 "class",    "finally",      "long",         "strictfp",     "volatile",
                 "const",    "float",        "native",       "super",        "while"};
         for(int i = 0; i < keywords.length ; i++){
-            if(keywords[i] == string){
+            if(keywords[i].equals(string)){
                 return true;
             }
         }
@@ -31,7 +31,7 @@ public class Token {
     public static boolean isOperator(String string){
         String[] operators = {"." , "++" , "--" , "~" , "!" , "*" , "/" , "%" , "+" , "-" , ">>" , "<<" , ">>>" , ">" , "<" , "<=" , ">=" , "==" , "!=" , "&" , "^" , "|" , "&&" , "||" , "=" , "+=" , "-=" , "*=" , "/=" , "%=" , "&=" , "^=" , "|=" , "<<=" , ">>=" , ">>>="};
         for (int i = 0 ; i < operators.length ; i++){
-            if(operators[i] == string){
+            if(operators[i].equals(string)){
                 return true;
             }
         }
@@ -52,7 +52,7 @@ public class Token {
         String[] literals = {"true" , "false" , "null"}; // Literal values
         Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?"); // Numbers are Literal too.
         for (int i = 0 ; i < literals.length ; i++){
-            if(literals[i] == string){
+            if(literals[i].equals(string)){
                 return true;
             }
         }

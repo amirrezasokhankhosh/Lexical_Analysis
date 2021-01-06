@@ -36,7 +36,7 @@ public class Main {
     public static void getLines () {
 
         try {
-            code = new File("C:\\Users\\Sepehr Shahsavar\\IdeaProjects\\CompilerPrj\\src\\com\\company\\Code.txt");
+            code = new File("Code.txt");
             scanner = new Scanner(code);
             while (scanner.hasNextLine()) {
                 lines.add(scanner.nextLine());

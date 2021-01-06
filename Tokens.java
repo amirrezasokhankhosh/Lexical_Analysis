@@ -1,18 +1,19 @@
 import java.util.regex.Pattern;
 
-class Tokens{
+public class Token {
+    public Token() {}
     public static boolean isKeyword(String string){
         String[] keywords = {
-            "abstract", "continue",     "for",          "new",          "switch",
-            "assert",   "default",      "if",           "package",      "synchronized",
-            "boolean",  "do",           "goto",         "private",      "this",
-            "break",    "double",       "implements",   "protected",    "throw",
-            "byte",     "else",         "import",       "public",       "throws",
-            "case",     "enum",         "instanceof",   "return",       "transient",
-            "catch",    "extends",      "int",          "short",        "try",
-            "char",     "final",        "interface",    "static",       "void",
-            "class",    "finally",      "long",         "strictfp",     "volatile",
-            "const",    "float",        "native",       "super",        "while"};
+                "abstract", "continue",     "for",          "new",          "switch",
+                "assert",   "default",      "if",           "package",      "synchronized",
+                "boolean",  "do",           "goto",         "private",      "this",
+                "break",    "double",       "implements",   "protected",    "throw",
+                "byte",     "else",         "import",       "public",       "throws",
+                "case",     "enum",         "instanceof",   "return",       "transient",
+                "catch",    "extends",      "int",          "short",        "try",
+                "char",     "final",        "interface",    "static",       "void",
+                "class",    "finally",      "long",         "strictfp",     "volatile",
+                "const",    "float",        "native",       "super",        "while"};
         for(int i = 0; i < keywords.length ; i++){
             if(keywords[i] == string){
                 return true;
@@ -37,10 +38,10 @@ class Tokens{
         return false;
     }
 
-    public static boolean isSeperator(String string){
+    public static boolean isSeparator(String string){
         String[] seperators = {";" , "{" , "}" , "[" , "]" , "(" , ")"};
         for (int i = 0 ; i < seperators.length ; i++){
-            if(seperators[i] == string){
+            if(seperators[i].equals(string)){
                 return true;
             }
         }
@@ -60,4 +61,5 @@ class Tokens{
         }
         return pattern.matcher(string).matches();
     }
+
 }

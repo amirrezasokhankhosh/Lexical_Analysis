@@ -13,10 +13,11 @@ public class Main {
         getLines(); // first we will get lines of the given code.
 
         // Then we will delete every white spaces inside the code and give anything else to a function -> isToken
-        for (int i = 0; i < lines.size(); i++) {
+        for (int i = 0; i < lines.size(); i ++) {
             StringTokenizer st = new StringTokenizer(lines.get(i));
             while (st.hasMoreTokens()) {
                 String token = st.nextToken();
+                System.out.println(token + " -> token now.");
                 boolean answer = isToken(token);
                 if (!answer) {
                     // this is when we get a error on lexical analysis.
@@ -75,11 +76,11 @@ public class Main {
     }
 
     public static boolean checkTokenType(String string){
-        if (Token.isIdentifier(string)) {
-            result.put(string , "Identifier");
-            return true;
-        }else if (Token.isKeyword(string)) {
+        if (Token.isKeyword(string)) {
             result.put(string , "Keyword");
+            return true;
+        }else if (Token.isIdentifier(string)) {
+            result.put(string , "Identifier");
             return true;
         }else if (Token.isLiteral(string)) {
             result.put(string , "Literal");
@@ -99,7 +100,7 @@ public class Main {
         char[] chars = string.toCharArray();
         String identifier = "";
         int start = 0;
-        for (int i = 0; i < chars.length; i++) {
+        for (int i = 0; i < chars.length; i ++) {
             if(isSeparator(chars[i])){
                 identifier = fixSubString(string ,start,i );
                 start = i + 1;

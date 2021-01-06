@@ -14,7 +14,8 @@ public class Token {
                 "char",     "final",        "interface",    "static",       "void",
                 "class",    "finally",      "long",         "strictfp",     "volatile",
                 "const",    "float",        "native",       "super",        "while"};
-        for(int i = 0; i < keywords.length ; i++){
+        
+        for(int i = 0; i < keywords.length ; i ++){
             if(keywords[i].equals(string)){
                 return true;
             }
@@ -30,7 +31,7 @@ public class Token {
 
     public static boolean isOperator(String string){
         String[] operators = {"." , "++" , "--" , "~" , "!" , "*" , "/" , "%" , "+" , "-" , ">>" , "<<" , ">>>" , ">" , "<" , "<=" , ">=" , "==" , "!=" , "&" , "^" , "|" , "&&" , "||" , "=" , "+=" , "-=" , "*=" , "/=" , "%=" , "&=" , "^=" , "|=" , "<<=" , ">>=" , ">>>="};
-        for (int i = 0 ; i < operators.length ; i++){
+        for (int i = 0 ; i < operators.length ; i ++){
             if(operators[i].equals(string)){
                 return true;
             }
@@ -39,8 +40,8 @@ public class Token {
     }
 
     public static boolean isSeparator(String string){
-        String[] seperators = {";" , "{" , "}" , "[" , "]" , "(" , ")"};
-        for (int i = 0 ; i < seperators.length ; i++){
+        String[] seperators = {";" , "{" , "}" , "[" , "]" , "(" , ")" , "<" , ">"};
+        for (int i = 0 ; i < seperators.length ; i ++){
             if(seperators[i].equals(string)){
                 return true;
             }
@@ -51,7 +52,7 @@ public class Token {
     public static boolean isLiteral(String string){
         String[] literals = {"true" , "false" , "null"}; // Literal values
         Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?"); // Numbers are Literal too.
-        for (int i = 0 ; i < literals.length ; i++){
+        for (int i = 0 ; i < literals.length ; i ++){
             if(literals[i].equals(string)){
                 return true;
             }

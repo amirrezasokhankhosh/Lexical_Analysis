@@ -1,3 +1,5 @@
+package sample;
+
 import java.util.regex.Pattern;
 
 public class Token {
@@ -14,7 +16,7 @@ public class Token {
                 "char",     "final",        "interface",    "static",       "void",
                 "class",    "finally",      "long",         "strictfp",     "volatile",
                 "const",    "float",        "native",       "super",        "while"};
-        
+
         for(int i = 0; i < keywords.length ; i ++){
             if(keywords[i].equals(string)){
                 return true;
@@ -64,3 +66,4 @@ public class Token {
     }
 
 }
+

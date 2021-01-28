@@ -2,7 +2,12 @@ package sample;
 
 public class Code{
     public static void main(String[] args){
-        System.out.println("HelloWorld!");
-        i = i + 1;
+        String input = "GeekforGeeks";
+        byte[] strAsByteArray = input.getBytes();
+        byte[] result = new byte[strAsByteArray.lenght];
+        for(int i = 0 ; i < strAsByteArray.lenght ; i ++){
+            result[i] = strAsByteArray[strAsByteArray.lenght - i - 1];
+        }
+        System.out.println(new String(result);
     }
 }

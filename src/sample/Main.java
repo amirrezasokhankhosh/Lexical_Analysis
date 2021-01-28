@@ -132,7 +132,7 @@ public class Main extends Application {
         // there.
 
         // abnormal:
-        boolean flag = true;
+        boolean flag = false;
         ArrayList<String> list = checkComplexString(string);
         if (list.size() > 0) {
             for (String s : list) {

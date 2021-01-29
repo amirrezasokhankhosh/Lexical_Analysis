@@ -9,7 +9,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.ScrollPane;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -32,6 +34,8 @@ public class Main extends Application {
         primaryStage.setTitle("Lexical Analysis");
 
         GridPane gridPane = new GridPane();
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.setContent(gridPane);
 
         Text identifiersText = new Text("IDENTIFIERS");
         Text keywordsText = new Text("KEYWORDS");
@@ -39,31 +43,31 @@ public class Main extends Application {
         Text separatorsText = new Text("SEPARATORS");
         Text literalsText = new Text("LITERALS");
 
-        gridPane.add(identifiersText, 0, 0);
-        gridPane.add(keywordsText, 1, 0);
-        gridPane.add(operatorsText, 2, 0);
-        gridPane.add(separatorsText, 3, 0);
-        gridPane.add(literalsText, 4, 0);
+        gridPane.add(identifiersText, 1, 0);
+        gridPane.add(keywordsText, 2, 0);
+        gridPane.add(operatorsText, 3, 0);
+        gridPane.add(separatorsText, 4, 0);
+        gridPane.add(literalsText, 5, 0);
 
         for(int i = 0 ; i < identifiers.size() ; i++) {
             Text identifierText = new Text(identifiers.get(i));
-            gridPane.add(identifierText, 0, i + 1);
+            gridPane.add(identifierText, 1, i + 1);
         }
         for(int i = 0 ; i < keywords.size() ; i++){
             Text text = new Text(keywords.get(i));
-            gridPane.add(text , 1 , i + 1);
+            gridPane.add(text , 2 , i + 1);
         }
         for(int i = 0 ; i < operators.size() ; i++){
             Text text = new Text(operators.get(i));
-            gridPane.add(text , 2 , i + 1);
+            gridPane.add(text , 3 , i + 1);
         }
         for(int i = 0 ; i < separators.size() ; i++){
             Text text = new Text(separators.get(i));
-            gridPane.add(text , 3 , i + 1);
+            gridPane.add(text , 4 , i + 1);
         }
         for(int i = 0 ; i < literals.size() ; i++){
             Text text = new Text(literals.get(i));
-            gridPane.add(text , 4 , i + 1);
+            gridPane.add(text , 5 , i + 1);
         }
 
         gridPane.setMinSize(400, 200);
@@ -75,7 +79,7 @@ public class Main extends Application {
 
         gridPane.setAlignment(Pos.CENTER);
 
-        primaryStage.setScene(new Scene(gridPane, 300, 275));
+        primaryStage.setScene(new Scene(scrollPane, 300, 275));
         primaryStage.show();
     }
 
